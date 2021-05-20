@@ -430,7 +430,7 @@ func volumeAttachmentRecoveryTestCase(t *testing.T, tc vaTest) {
 	if tc.csiMigration {
 		defer featuregatetesting.SetFeatureGateDuringTest(t, utilfeature.DefaultFeatureGate, features.CSIMigration, tc.csiMigration)()
 		defer featuregatetesting.SetFeatureGateDuringTest(t, utilfeature.DefaultFeatureGate, features.CSIMigrationGCE, tc.csiMigration)()
-		defer featuregatetesting.SetFeatureGateDuringTest(t, utilfeature.DefaultFeatureGate, features.InTreePluginGCEUnregister, tc.csiMigration)()
+		defer featuregatetesting.SetFeatureGateDuringTest(t, utilfeature.DefaultFeatureGate, features.CSIMigrationGCEComplete, tc.csiMigration)()
 
 		// if InTreePluginGCEUnregister is enabled, only the CSI plugin is registered but not the in-tree one
 		plugins = append(plugins, csi.ProbeVolumePlugins()...)
