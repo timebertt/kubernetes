@@ -188,6 +188,13 @@ const (
 	// Enables server-side field validation.
 	ServerSideFieldValidation featuregate.Feature = "ServerSideFieldValidation"
 
+	// owner: @timebertt
+	// kep: n/a
+	// alpha: n/a
+	//
+	// Enables sharding for API requests.
+	Sharding featuregate.Feature = "Sharding"
+
 	// owner: @enj
 	// beta: v1.29
 	//
@@ -288,6 +295,8 @@ var defaultKubernetesFeatureGates = map[featuregate.Feature]featuregate.FeatureS
 	ServerSideApply: {Default: true, PreRelease: featuregate.GA, LockToDefault: true}, // remove in 1.29
 
 	ServerSideFieldValidation: {Default: true, PreRelease: featuregate.GA, LockToDefault: true}, // remove in 1.29
+
+	Sharding: {Default: false, PreRelease: featuregate.Alpha},
 
 	StorageVersionAPI: {Default: false, PreRelease: featuregate.Alpha},
 
