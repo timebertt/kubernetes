@@ -69,6 +69,7 @@ import (
 	"k8s.io/controller-manager/pkg/informerfactory"
 	"k8s.io/controller-manager/pkg/leadermigration"
 	"k8s.io/klog/v2"
+
 	kubefeatures "k8s.io/kubernetes/pkg/features"
 
 	"k8s.io/kubernetes/cmd/kube-controller-manager/app/config"
@@ -482,6 +483,9 @@ func NewControllerInitializers(loopMode ControllerLoopMode) map[string]InitFunc 
 	}
 	if utilfeature.DefaultFeatureGate.Enabled(kubefeatures.DynamicResourceAllocation) {
 		register("resource-claim-controller", startResourceClaimController)
+	}
+	if utilfeature.DefaultFeatureGate.Enabled(genericfeatures.Sharding) {
+		register("shardlease", startShardLeaseController)
 	}
 
 	return controllers

@@ -1997,6 +1997,9 @@ k8s.io/component-helpers/node/util/sysctl
 k8s.io/component-helpers/node/util/sysctl/testing
 k8s.io/component-helpers/scheduling/corev1
 k8s.io/component-helpers/scheduling/corev1/nodeaffinity
+k8s.io/component-helpers/sharding
+k8s.io/component-helpers/sharding/controller/shardlease
+k8s.io/component-helpers/sharding/leases
 k8s.io/component-helpers/storage/ephemeral
 k8s.io/component-helpers/storage/volume
 # k8s.io/controller-manager v0.0.0 => ./staging/src/k8s.io/controller-manager
